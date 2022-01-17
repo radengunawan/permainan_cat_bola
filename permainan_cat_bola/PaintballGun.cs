@@ -10,33 +10,33 @@ namespace permainan_cat_bola
         //it’s going to be used by the Main method.
         public const int MAGAZINE_SIZE = 16;  // We’ll keep this constant public because
                                              //it’s going to be used by the Main method
-        private int balls = 0;
+        private int balls = 100;
         private int ballsLoaded = 0;
 
         public int GetBallsLoaded()               //--------------------------------   
-        { return this.ballsLoaded; }             //When the game needs 
-                                                // to display the number of 
-        public bool IsEmpty()                   // balls left and the number       
+        { return this.ballsLoaded; }             //When the game requires 
+                                                // to show the amount of 
+        public bool IsEmpty()                   // remaining balls and the number       
         { return this.ballsLoaded == 0; }       // of balls loaded in the UI, it
 
-        public int GetBalls()                   // can call the GetBalls and
+        public int GetBalls()                   // is able to summon the GetBalls and
         { return this.balls; }                  // GetBallsLoaded methods.
                                                 //---------------------------------
 
         public void SetBalls(int numberOfBalls)
         {
             if (numberOfBalls > 0)
-                this.balls = numberOfBalls; // The game needs to be able to set the number of balls.
-            Reload();                       // The SetBalls method protects the balls field by only
-        }                                   // allowing the game to set a positive number of balls.
-                                            // Then it calls Reload to automatically reload the gun.
+                this.balls = numberOfBalls; // The game wants to be capable to arrange the amount of balls.
+            Reload();                       // The SetBalls method secure the balls field by only
+        }                                   // permitting the game to arrange a positive number of balls.
+                                            // Then it summons Reload to automatically reload the gun.
 
-        private void Reload()                       // The only way to reload the gun is to call the
-        {                                           // Reload method, which loads the gun with a
-            if (this.balls > MAGAZINE_SIZE)         // full magazine, or the remaining number of
-                this.ballsLoaded = MAGAZINE_SIZE;   // balls if there isn’t a full magazine’s worth.
-            else                                    // This keeps the balls and ballsLoaded fields
-                this.ballsLoaded = this.balls;      // from getting out of sync.
+        public void Reload()                       // The only way to refill the gun is to summon the
+        {                                           // Reload method, which fills the gun with a
+            if (this.balls > MAGAZINE_SIZE)         // full magazine, or the  number of balls
+                this.ballsLoaded = MAGAZINE_SIZE;   // left if there isn’t a full magazine’s worth.
+            else                                    // This protects the balls and ballsLoaded fields
+                this.ballsLoaded = this.balls;      // from being async.
         }
 
 
