@@ -10,7 +10,7 @@ namespace permainan_cat_bola
 
             while (true)
             {
-                Console.WriteLine($"{senpi.GetBalls()} balls, {senpi.GetBallsLoaded()} loaded.");
+                Console.WriteLine($"{senpi.Bollaz} balls, {senpi.GetBallsLoaded()} loaded.");
 
                 if (senpi.IsEmpty()) Console.WriteLine("DANGER!. You're out of ammo");
                 Console.WriteLine ("Shoot=Space, Reload = r, Quit = q");
@@ -21,7 +21,10 @@ namespace permainan_cat_bola
 
                 else if (khoonci == 'r') senpi.Reload();
 
-                else if (khoonci == '+') senpi.SetBalls(senpi.GetBalls() + PaintballGun.MAGAZINE_SIZE);
+                else if (khoonci == '+') {
+                    //senpi.SetBalls(senpi.GetBalls() + PaintballGun.MAGAZINE_SIZE);
+                   senpi.Bollaz += PaintballGun.MAGAZINE_SIZE;
+                } 
 
                 else if (khoonci == 'q') return;
                 

@@ -19,17 +19,29 @@ namespace permainan_cat_bola
         public bool IsEmpty()                   // remaining balls and the number       
         { return this.ballsLoaded == 0; }       // of balls loaded in the UI, it
 
-        public int GetBalls()                   // is able to summon the GetBalls and
-        { return this.balls; }                  // GetBallsLoaded methods.
-                                                //---------------------------------
+        //public int GetBalls()                   // is able to summon the GetBalls and
+        //{ return this.balls; }                  // GetBallsLoaded methods.
+        //                                        //---------------------------------
 
-        public void SetBalls(int numberOfBalls)
+        //public void SetBalls(int numberOfBalls)
+        //{
+        //    if (numberOfBalls > 0)
+        //        this.balls = numberOfBalls; // The game wants to be capable to arrange the amount of balls.
+        //    Reload();                       // The SetBalls method secure the balls field by only
+        //}                                   // permitting the game to arrange a positive number of balls.
+        //                                    // Then it summons Reload to automatically reload the gun.
+
+        public int Bollaz
         {
-            if (numberOfBalls > 0)
-                this.balls = numberOfBalls; // The game wants to be capable to arrange the amount of balls.
-            Reload();                       // The SetBalls method secure the balls field by only
-        }                                   // permitting the game to arrange a positive number of balls.
-                                            // Then it summons Reload to automatically reload the gun.
+            get { return balls; }
+            set
+            {
+                if (value > 0)
+                    balls = value;
+                Reload();
+            }
+        }
+
 
         public void Reload()                       // The only way to refill the gun is to summon the
         {                                           // Reload method, which fills the gun with a
