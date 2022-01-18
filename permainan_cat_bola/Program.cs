@@ -30,17 +30,6 @@ namespace permainan_cat_bola
                 
 
 
-
-
-
-
-
-
-
-
-
-
-
             }
         }
     }

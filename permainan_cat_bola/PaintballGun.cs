@@ -13,6 +13,8 @@ namespace permainan_cat_bola
         private int balls = 100;
         private int ballsLoaded = 0;
 
+        
+
         public int GetBallsLoaded()               //--------------------------------   
         { return this.ballsLoaded; }             //When the game requires 
                                                 // to show the amount of 
@@ -33,14 +35,22 @@ namespace permainan_cat_bola
 
         public int Bollaz
         {
-            get { return balls; }
+            get { return this.balls; }
+            
             set
             {
                 if (value > 0)
-                    balls = value;
+                    this.balls = value;
                 Reload();
             }
+            //get; set;
         }
+
+        //public int BallsLoaded
+        //{
+        //    get { return this.ballsLoaded; }
+        //    set { this.ballsLoaded = value; }
+        //}
 
 
         public void Reload()                       // The only way to refill the gun is to summon the
