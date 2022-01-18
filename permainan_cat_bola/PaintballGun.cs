@@ -14,7 +14,7 @@ namespace permainan_cat_bola
         //private int ballsLoaded = 0;
 
 
-        public int BallsLoaded { get; set; }
+        public int BallsLoaded { get; private set; }
 
        // public int GetBallsLoaded()               //--------------------------------   
        // { return this.ballsLoaded; }             //When the game requires 
@@ -38,7 +38,7 @@ namespace permainan_cat_bola
         {
             get { return this.balls; }
             
-            set
+             set
             {
                 if (value > 0)
                     this.balls = value;
