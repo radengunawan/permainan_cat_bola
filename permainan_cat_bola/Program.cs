@@ -10,7 +10,7 @@ namespace permainan_cat_bola
 
             while (true)
             {
-                Console.WriteLine($"{senpi.Bollaz} balls, {senpi.GetBallsLoaded()} loaded.");
+                Console.WriteLine($"{senpi.Bollaz} balls, {senpi.BallsLoaded} loaded.");
 
                 if (senpi.IsEmpty()) Console.WriteLine("DANGER!. You're out of ammo");
                 Console.WriteLine ("Shoot=Space, Reload = r, Quit = q");

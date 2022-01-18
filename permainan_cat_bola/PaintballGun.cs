@@ -11,15 +11,16 @@ namespace permainan_cat_bola
         public const int MAGAZINE_SIZE = 16;  // We’ll keep this constant public because
                                              //it’s going to be used by the Main method
         private int balls = 100;
-        private int ballsLoaded = 0;
+        //private int ballsLoaded = 0;
 
-        
 
-        public int GetBallsLoaded()               //--------------------------------   
-        { return this.ballsLoaded; }             //When the game requires 
+        public int BallsLoaded { get; set; }
+
+       // public int GetBallsLoaded()               //--------------------------------   
+       // { return this.ballsLoaded; }             //When the game requires 
                                                 // to show the amount of 
         public bool IsEmpty()                   // remaining balls and the number       
-        { return this.ballsLoaded == 0; }       // of balls loaded in the UI, it
+        { return this.BallsLoaded == 0; }       // of balls loaded in the UI, it
 
         //public int GetBalls()                   // is able to summon the GetBalls and
         //{ return this.balls; }                  // GetBallsLoaded methods.
@@ -56,17 +57,17 @@ namespace permainan_cat_bola
         public void Reload()                       // The only way to refill the gun is to summon the
         {                                           // Reload method, which fills the gun with a
             if (this.balls > MAGAZINE_SIZE)         // full magazine, or the  number of balls
-                this.ballsLoaded = MAGAZINE_SIZE;   // left if there isn’t a full magazine’s worth.
+                this.BallsLoaded = MAGAZINE_SIZE;   // left if there isn’t a full magazine’s worth.
             else                                    // This protects the balls and ballsLoaded fields
-                this.ballsLoaded = this.balls;      // from being async.
+                this.BallsLoaded = this.balls;      // from being async.
         }
 
 
         public bool Shoot()
         {
 
-            if (ballsLoaded == 0) return false;
-            this.ballsLoaded--;                     // The Shoot method returns true
+            if (BallsLoaded == 0) return false;
+            this.BallsLoaded--;                     // The Shoot method returns true
             this.balls--;                           // and decrements the balls field if
             return true;                            // the gun is loaded, or false if it isn’t.
         }
